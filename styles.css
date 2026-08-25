@@ -1,0 +1,282 @@
+/* ======================== Import Inter Font From Google Fonts ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* =============================== Global Reset ==================================== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: url("./imgs/weather-bg.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Inter", sans-serif;
+}
+
+/* =============================== Header Styles ==================================== */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(17.8px);
+}
+.header_title {
+  width: 155px;
+  height: 29px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+/* =============================== Main Styles ==================================== */
+.main {
+  font-family: "Inter", sans-serif;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+/* Обёртка инпута и кнопки в один ряд */
+.search {
+  padding-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+/* Поле ввода - полупрозрачное, с закруглёнными краями, белый текст и рамка */
+#cityInput {
+  flex: 1;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffffcc;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(28, 20, 184, 0.8);
+  border-radius: 30px;
+  outline: none;
+  font-family: "Inter", sans-serif;
+}
+
+#cityInput::placeholder {
+  color: rgba(255, 255, 255, 0.43);
+  font-weight: normal;
+}
+
+/* Кнопка Search - синяя, закруглённая */
+#searchBtn {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4a7dc4;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif;
+}
+
+#searchBtn:hover {
+  background-color: #3f6cae;
+}
+
+#searchBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Индикатор загрузки */
+.loading {
+  margin-top: 12px;
+  color: #fff;
+  text-align: center;
+  display: none;
+  z-index: 2;
+}
+
+/* Handle the result */
+#fulfilledResult {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 700px;
+}
+.cityWeather {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 100%;
+  background: linear-gradient(#2f486f88, #0b1b3488);
+  border-radius: 20px;
+  color: #fff;
+}
+.cityWeatherInfo {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.cityDegreeCelcius {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.cityName {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.cityWeatherIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+#CityWeatherIcon{
+   width: 120px;
+}
+.feelsLikeDegree {
+  flex: 1;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: linear-gradient(#2f486f88, #0b1b3488);
+  border-radius: 20px;
+  color: #fff;
+  width: 223px;
+  height: 141px;
+}
+.feelsLikeDegreeTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.feelsLikeDegreeIcon img {
+  width: 30px;
+  opacity: 0.61;
+}
+.feelsLikeDegreeInfo {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffffaf;
+}
+.feelsLikeDegreeCelsius {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.blank {
+  padding: 20px;
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#2f486f88, #0b1b3488);
+  border-radius: 20px;
+  color: #fff;
+  width: 447px;
+  height: 141px;
+  opacity: 1;
+}
+
+/* Handle Rejected Result */
+#rejectedResult {
+  padding: 30px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 700px;
+  background: linear-gradient(#2f486f88, #0b1b3488);
+  border-radius: 20px;
+  color: #fff;
+}
+.rejectedResultTitle {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 57px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #F35E5E;
+}
+.rejectedResultSubTitle {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+@media (max-width: 454px) {
+  #searchBtn {
+    flex: 1;
+  }
+}
