@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+  <head lang="en">
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <script src="./weather.js" defer></script>
+    <link
+      rel="shortcut icon"
+      href="./imgs/weatherApp.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <header class="header">
+        <h1 class="header_title">Weather App</h1>
+      </header>
+      <main class="main">
+        <div class="search">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter the city name ..."
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="fulfilledResult">
+          <div class="cityWeather">
+            <div class="cityWeatherInfo">
+              <div class="cityDegreeCelcius">18°</div>
+              <div class="cityName">Colorado</div>
+            </div>
+            <div class="cityWeatherIcon"><img src="" alt="Weather Icon" id="CityWeatherIcon"></div>
+          </div>
+
+          <div class="feelsLikeDegree">
+            <div class="feelsLikeDegreeTitle">
+              <div class="feelsLikeDegreeIcon">
+                <img src="./imgs/feels-like-icon.png" alt="feels like icon" />
+              </div>
+              <div class="feelsLikeDegreeInfo">FEELS LIKE</div>
+            </div>
+            <div class="feelsLikeDegreeCelsius">26°</div>
+          </div>
+
+          <div class="blank"></div>
+        </div>
+        <div id="rejectedResult">
+          <div class="rejectedResultTitle">API Error</div>
+          <div class="rejectedResultSubTitle">
+            Something went wrong with API data
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
